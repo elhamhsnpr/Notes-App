@@ -30,6 +30,15 @@ const removeNote = (title) => {
         console.log(chalk.red.inverse('No note found!'))
     }
 }
+
+const listNotes = () => {
+    const notes = loadNotes()
+
+    console.log(chalk.blue('Your notes:'))
+    notes.forEach(note => console.log(note.title))
+
+}
+
 const getNotes = () => {
     return "Your notes..."
 }
@@ -50,5 +59,6 @@ const loadNotes = () => {
 
 module.exports = {
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }
